@@ -1,0 +1,21 @@
+<div class="form-area">
+    <h1>Post Form</h1>
+    <input type="text" placeholder="Title" [(ngModel)]="postTitle">
+    <br><br>
+    <textarea cols="20" rows="10" placeholder="type the details" [(ngModel)]="postDetails"></textarea>
+    <br><br>
+    <input type="text" placeholder="image url" [(ngModel)]="imgUrl">
+    <br><br>
+    <input type="text" placeholder="url" [(ngModel)]="urlLink">
+    <br><br>
+    <input type="checkbox" [(ngModel)]="backGround">Add Background
+</div>
+<div class="display-form">
+    <img [src]="imgUrl" alt="">
+    <br>
+    <h1><span [style.backgroundColor]="backGround ? 'yellow': ''">{{ postTitle }}</span></h1>
+    <br><br>
+    <p>{{ postDetails }}</p>
+    <br><br>
+    <a [href]="urlLink" target="_blank" [style.display]="urlLink?'block': 'none'">Click here</a>
+</div>

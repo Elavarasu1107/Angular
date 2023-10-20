@@ -1,0 +1,15 @@
+<h2>Navbar Component</h2>
+
+<!-- Class binding -->
+<h4 [class.text-red]="bool">Navbar 1</h4>
+<!-- Style binding -->
+<h3 [style.color]="bool ? 'red' : 'blue'">Navbar 2</h3>
+<!-- Property binding -->
+<img [src]="imgUrl" alt="">
+<!-- event filter -->
+<!-- #username represents the template variable -->
+<input type="text" (keyup.enter)="inputData($event)" placeholder="Event filter">
+<input type="text" (keyup.enter)="inputData(username.value)" #username placeholder="Template varible">
+
+<!-- Two way data binding -->
+<input [(ngModel)]="userName" type="text" (keyup.enter)="twoWayBinding()" placeholder="Two way data binding">
