@@ -6,7 +6,7 @@ import { PostComponent } from './post/post.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   title = 'AngularPractice';
   parentMessage:string = 'Message from app root';
   mP:any;
@@ -16,9 +16,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(PostComponent) messagePost:any;
 
   // // Executes after the dom is initialized completely
-  ngAfterViewInit(): void {
-      this.mP = this.messagePost.messagePost
-  }
+  // ngAfterViewInit(): void {
+  //     this.mP = this.messagePost.messagePost
+  // }
 
   receiveMessage($event:any){
     console.log($event);

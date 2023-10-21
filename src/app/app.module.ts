@@ -9,6 +9,8 @@ import { PostComponent } from './post/post.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { PostFormComponent } from './post-form/post-form.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { PostFormComponent } from './post-form/post-form.component';
     NavbarComponent,
     PostComponent,
     PostFormComponent,
+    DirectivesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

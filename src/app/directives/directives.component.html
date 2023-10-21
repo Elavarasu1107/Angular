@@ -1,0 +1,76 @@
+<!-- <div>
+    <button (click)="addData()">Add new</button>
+    <div *ngIf="arr.length > 0; then listArr else noData"></div>
+    <div>
+        <button (click)="switcher('step1')">switch 1</button>
+        <button (click)="switcher('step2')">switch 2</button>
+        <button (click)="switcher('step3')">switch 3</button>
+    </div>
+
+    <ng-template #listArr>
+        <ul>
+            <li *ngFor="let num of arr let i=index">{{ num }}
+                <button (click)="deleteData(i)">Delete</button>
+            </li>
+        </ul>
+    </ng-template>
+
+    <ng-template #noData>
+        <p>No data to display</p>
+    </ng-template>
+
+    <div [ngSwitch]="str">
+        <p *ngSwitchCase="'step1'">Step 1</p>
+        <p *ngSwitchCase="'step2'">Step 2</p>
+        <p *ngSwitchCase="'step3'">Step 3</p>
+        <p *ngSwitchDefault>Default</p>
+    </div>
+
+    <h1 [ngStyle]="{
+        color: isActive ? 'red' : 'blue',
+        textTransform: isActive ? 'uppercase' : 'lowercase'
+    }" [ngClass]="{
+        'main': isActive,
+        'text-weight': isActive
+    }">
+        Style directive
+    </h1>
+</div> -->
+
+<div [ngClass]="{'user-data': 'isActive'}">
+    <h2>User Details</h2>
+    <input type="text" [(ngModel)]="name" placeholder="Enter name">
+    <br>
+    <input type="email" [(ngModel)]="email" placeholder="Enter email">
+    <br>
+    <textarea cols="20" rows="5" [(ngModel)]="address"></textarea>
+    <br>
+    <button (click)="saveData()">Save</button>
+</div>
+
+<div *ngIf="userObj.length>0; then tableData else noData"></div>
+
+<ng-template #tableData>
+    <div [ngClass]="{'table-data': 'isActive'}">
+        <table [width]="500">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+            <tr *ngFor="let user of userObj; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.address }}</td>
+                <td><button (click)="deleteUser(i)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</ng-template>
+
+<ng-template #noData>
+    <h2>No data to display</h2>
+</ng-template>
