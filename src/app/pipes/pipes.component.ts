@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ServiceDemo } from './services/pipes.services'
 
 @Component({
   selector: 'app-pipes',
   templateUrl: './pipes.component.html',
-  styleUrls: ['./pipes.component.scss']
+  styleUrls: ['./pipes.component.scss'],
 })
 export class PipesComponent {
 
@@ -15,6 +16,20 @@ export class PipesComponent {
 
   json: any = {
     name: 'Dharani'
+  }
+
+  fromInjection:any;
+
+  constructor(private postService: ServiceDemo){
+    this.fromInjection = postService.postArray
+  }
+
+  addNewData(){
+    this.postService.addData({
+      name:'Dharani',
+      age: 27,
+      location: 'sankari'
+    })
   }
 
 }

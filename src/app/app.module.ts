@@ -13,6 +13,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { CommonModule } from '@angular/common';
 import { PipesComponent } from './pipes/pipes.component';
 import { AppendPipe } from './pipes/custom.pipe';
+import { ServiceDemo } from './pipes/services/pipes.services';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AppendPipe } from './pipes/custom.pipe';
     MatSlideToggleModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [ServiceDemo],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,3 +14,10 @@
 
 <!-- custom pipe -->
 <h4>{{ json.name | append }}</h4>
+
+<div>
+    <button (click)="addNewData()">Add new data</button>
+    <ul *ngFor="let data of fromInjection">
+        <li>{{ data | json }}</li>
+    </ul>
+</div>
