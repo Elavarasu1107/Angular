@@ -7,13 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostFormComponent } from './post-form/post-form.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CommonModule } from '@angular/common';
 import { PipesComponent } from './pipes/pipes.component';
 import { AppendPipe } from './pipes/custom.pipe';
 import { ServiceDemo } from './pipes/services/pipes.services';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,13 @@ import { ServiceDemo } from './pipes/services/pipes.services';
     PostFormComponent,
     DirectivesComponent,
     PipesComponent,
-    AppendPipe
+    AppendPipe,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,

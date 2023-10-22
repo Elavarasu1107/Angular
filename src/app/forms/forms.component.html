@@ -1,0 +1,94 @@
+<div class="container mt-2">
+    <div class="form-area">
+        <!-- Template driven form -->
+        <!-- <form #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter name" class="form-control" name="name" ngModel #fullName="ngModel"
+                    (change)="getValue(fullName)" [ngClass]="{'is-invalid': fullName.touched && fullName.invalid}"
+                    required>
+                <div class="alert alert-danger" *ngIf="fullName.touched && fullName.invalid">Name field
+                    required...</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" placeholder="Enter email" class="form-control" name="email" ngModel #email="ngModel"
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Wrong email...</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Address</label>
+                <textarea cols="30" rows="10" placeholder="Enter address" class="form-control" name="address"
+                    ngModel></textarea>
+            </div>
+            <br>
+            <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Save</button>
+        </form> -->
+
+
+        <!-- Reactive form -->
+        <form [formGroup]="form" (ngSubmit)="onReactiveFormSubmit()" class="mt-5">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter name" class="form-control" name="name" formControlName="name"
+                    [ngClass]="{'is-invalid': form.get('name').touched && form.get('name').invalid}" required>
+                <div *ngIf="form.get('name').errors?.required && form.get('name').touched && form.get('name').invalid">
+                    <div class="alert alert-danger">Field required...</div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" placeholder="Enter email" class="form-control" name="email" formControlName="email"
+                    required>
+                <div class="alert alert-danger" *ngIf="form.get('email').touched && form.get('email').invalid">Wrong
+                    email...</div>
+            </div>
+            <br>
+            <div formGroupName="contactDetails">
+                <div class="form-group">
+                    <label for="">Address</label>
+                    <textarea cols="30" rows="10" placeholder="Enter address" class="form-control"
+                        formControlName="address" name="address" required=""></textarea>
+                    <div class="alert alert-danger"
+                        *ngIf="contactDetails.get('address').touched && contactDetails.get('address').errors?.required">
+                        Address required
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Shipping Address</label>
+                    <textarea cols="30" rows="10" placeholder="Enter address" class="form-control"
+                        formControlName="shippingAddress" name="address" required=""></textarea>
+                    <div class="alert alert-danger"
+                        *ngIf="contactDetails.get('shippingAddress').touched && contactDetails.get('shippingAddress').errors?.required">
+                        Shipping Address required</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Contact No</label>
+                    <input type="number" placeholder="Enter number" class="form-control" name="number"
+                        formControlName="contactNo" required>
+                    <div class="alert alert-danger"
+                        *ngIf="contactDetails.get('contactNo').touched && contactDetails.get('contactNo').invalid">
+                        Mobile no required</div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Skills</label>
+                <input type="text" placeholder="Enter skills" class="form-control" (keyup.enter)="addSkills(skill)"
+                    #skill>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let skill of skills.controls; let i=index">{{ skill.value }}
+                        <a class="btn btn-sm btn-danger" (click)="removeSkill(i)"> X</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+        </form>
+    </div>
+</div>
