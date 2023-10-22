@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { PostFormComponent } from './post-form/post-form.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CommonModule } from '@angular/common';
+import { PipesComponent } from './pipes/pipes.component';
+import { AppendPipe } from './pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CommonModule } from '@angular/common';
     PostComponent,
     PostFormComponent,
     DirectivesComponent,
+    PipesComponent,
+    AppendPipe
   ],
   imports: [
     BrowserModule,
