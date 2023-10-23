@@ -16,6 +16,9 @@ import { AppendPipe } from './pipes/custom.pipe';
 import { ServiceDemo } from './pipes/services/pipes.services';
 import { FormsComponent } from './forms/forms.component';
 import { CustomValidatorsComponent } from './custom-validators/custom-validators.component';
+import { RoutingDemoComponent } from './routing-demo/routing-demo.component';
+import { RouterModule } from '@angular/router';
+import { ViewAgeComponent } from './view-age/view-age.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { CustomValidatorsComponent } from './custom-validators/custom-validators
     PipesComponent,
     AppendPipe,
     FormsComponent,
-    CustomValidatorsComponent
+    CustomValidatorsComponent,
+    RoutingDemoComponent,
+    ViewAgeComponent
   ],
   imports: [
     BrowserModule,
