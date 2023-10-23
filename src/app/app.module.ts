@@ -15,6 +15,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { AppendPipe } from './pipes/custom.pipe';
 import { ServiceDemo } from './pipes/services/pipes.services';
 import { FormsComponent } from './forms/forms.component';
+import { CustomValidatorsComponent } from './custom-validators/custom-validators.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsComponent } from './forms/forms.component';
     DirectivesComponent,
     PipesComponent,
     AppendPipe,
-    FormsComponent
+    FormsComponent,
+    CustomValidatorsComponent
   ],
   imports: [
     BrowserModule,
